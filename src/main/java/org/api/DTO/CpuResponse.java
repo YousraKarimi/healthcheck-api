@@ -6,8 +6,8 @@ public class CpuResponse {
     private int physical_cores;
     private String checked_at;
 
-//    private boolean alert_triggered;
-//    private IncidentInfo incident;
+    private boolean alert_triggered;
+    private IncidentInfo incident;
 
     public CpuResponse() {}
 
@@ -30,9 +30,9 @@ public class CpuResponse {
     public String getChecked_at() { return checked_at; }
     public void setChecked_at(String checked_at) { this.checked_at = checked_at; }
 
-//    public boolean isAlert_triggered() { return alert_triggered; }
-//    public void setAlert_triggered(boolean alert_triggered) { this.alert_triggered = alert_triggered; }
-//
-//    public IncidentInfo getIncident() { return incident; }
-//    public void setIncident(IncidentInfo incident) { this.incident = incident; }
+    public boolean isAlert_triggered() { return alert_triggered; }
+    public void setAlert_triggered(boolean alert_triggered) { this.alert_triggered = alert_triggered; }
+
+    public IncidentInfo getIncident() { return incident; }
+    public void setIncident(IncidentInfo incident) { this.incident = incident; }
 }

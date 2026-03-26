@@ -14,8 +14,12 @@ import java.time.format.DateTimeFormatter;
 public class SystemMetricsService {
 
         private final SystemInfo systemInfo = new SystemInfo();
+        private final AlertService alertService;
 
-        public HealthResponse getHealth() {
+        public SystemMetricsService(AlertService alertService) {
+            this.alertService = alertService;
+    }
+    public HealthResponse getHealth() {
             try {
                 var os = systemInfo.getOperatingSystem();
 
@@ -32,68 +36,113 @@ public class SystemMetricsService {
             }
         }
 
-        public CpuResponse getCpu() {
-            try {
-                var processor = systemInfo.getHardware().getProcessor();
+    public CpuResponse getCpu() {
+        try {
+            var processor = systemInfo.getHardware().getProcessor();
 
-                long[] ticks = processor.getSystemCpuLoadTicks();
-                sleep(1000);
-                double cpuLoad = processor.getSystemCpuLoadBetweenTicks(ticks) * 100;
+            long[] ticks = processor.getSystemCpuLoadTicks();
+            sleep(1000);
+            double cpuLoad = processor.getSystemCpuLoadBetweenTicks(ticks) * 100;
 
-                return new CpuResponse(
-                        round(cpuLoad),
-                        processor.getLogicalProcessorCount(),
-                        processor.getPhysicalProcessorCount(),
-                        now()
-                );
+            CpuResponse response = new CpuResponse(
+                    round(cpuLoad),
+                    processor.getLogicalProcessorCount(),
+                    processor.getPhysicalProcessorCount(),
+                    now()
+            );
 
-            } catch (Exception e) {
-                throw new MetricsException("Unable to read CPU metrics");
+            IncidentInfo incident = alertService.sendAlert(
+                    "CPU",
+                    cpuLoad,
+                    getHostname()
+            );
+
+            if (cpuLoad > 30) {
+                response.setAlert_triggered(true);
+                response.setIncident(incident);
+            } else {
+                response.setAlert_triggered(false);
             }
+
+            return response;
+
+        } catch (Exception e) {
+            throw new MetricsException("Unable to read CPU metrics");
         }
+    }
 
-        public MemoryResponse getMemory() {
-            try {
-                var memory = systemInfo.getHardware().getMemory();
+    public MemoryResponse getMemory() {
+        try {
+            var memory = systemInfo.getHardware().getMemory();
 
-                double total = bytesToGb(memory.getTotal());
-                double free = bytesToGb(memory.getAvailable());
-                double used = total - free;
-                double percent = (used / total) * 100;
+            double total = bytesToGb(memory.getTotal());
+            double free = bytesToGb(memory.getAvailable());
+            double used = total - free;
+            double percent = (used / total) * 100;
 
-                return new MemoryResponse(
-                        round(total),
-                        round(used),
-                        round(free),
-                        round(percent),
-                        now()
-                );
+            MemoryResponse response = new MemoryResponse(
+                    round(total),
+                    round(used),
+                    round(free),
+                    round(percent),
+                    now()
+            );
 
-            } catch (Exception e) {
-                throw new MetricsException("Unable to read memory metrics");
+            IncidentInfo incident = alertService.sendAlert(
+                    "MEMORY",
+                    percent,
+                    getHostname()
+            );
+
+            if (percent > 30) {
+                response.setAlert_triggered(true);
+                response.setIncident(incident);
+            } else {
+                response.setAlert_triggered(false);
             }
+
+            return response;
+
+        } catch (Exception e) {
+            throw new MetricsException("Unable to read memory metrics");
         }
-        public DiskResponse getDisk() {
-            try {
-                File root = new File("/");
+    }
+    public DiskResponse getDisk() {
+        try {
+            File root = new File("/");
 
-                double total = bytesToGb(root.getTotalSpace());
-                double free = bytesToGb(root.getFreeSpace());
-                double used = total - free;
-                double percent = (used / total) * 100;
+            double total = bytesToGb(root.getTotalSpace());
+            double free = bytesToGb(root.getFreeSpace());
+            double used = total - free;
+            double percent = (used / total) * 100;
 
-                return new DiskResponse(
-                        round(total),
-                        round(used),
-                        round(free),
-                        round(percent),
-                        now()
-                );
+            DiskResponse response = new DiskResponse(
+                    round(total),
+                    round(used),
+                    round(free),
+                    round(percent),
+                    now()
+            );
 
-            } catch (Exception e) {
-                throw new MetricsException("Unable to read disk metrics");
+            IncidentInfo incident = alertService.sendAlert(
+                    "DISK",
+                    percent,
+                    getHostname()
+            );
+
+            if (percent > 30) {
+                response.setAlert_triggered(true);
+                response.setIncident(incident);
+            } else {
+                response.setAlert_triggered(false);
             }
+
+            return response;
+
+        } catch (Exception e) {
+            throw new MetricsException("Unable to read disk metrics");
         }
+    }
 
         public AllMetricsResponse getAll() {
             try {
@@ -136,11 +185,17 @@ public class SystemMetricsService {
     public AllMetricsResponse getAll2() {
         throw new MetricsException("Unable to read all metrics");
     }
-        private double bytesToGb(long bytes) {
+    private double bytesToGb(long bytes) {
             return bytes / 1024.0 / 1024.0 / 1024.0;
         }
-
         private double round(double val) {
             return Math.round(val * 100.0) / 100.0;
         }
+    private String getHostname() {
+        try {
+            return InetAddress.getLocalHost().getHostName();
+        } catch (Exception e) {
+            return "unknown";
+        }
+    }
 }

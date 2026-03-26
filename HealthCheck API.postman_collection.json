@@ -1,0 +1,595 @@
+{
+  "info": {
+    "_postman_id": "156ef279-80d5-482b-87de-927427254b40",
+    "name": "HealthCheck API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26114730"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Health",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "health"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:19:32 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"UP\",\n    \"hostname\": \"DESKTOP-EPN0LQQ\",\n    \"os\": \"Windows\",\n    \"platform\": \"Microsoft Windows 10 build 19045\",\n    \"checked_at\": \"Thu, 26 Mar 2026 12:19:32 +0100\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "CPU",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/cpu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "cpu"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "CPU",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/cpu",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "cpu"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:19:37 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_usage_percent\": 17.03,\n    \"logical_cores\": 4,\n    \"physical_cores\": 2,\n    \"checked_at\": \"Thu, 26 Mar 2026 12:19:37 +0100\",\n    \"alert_triggered\": false,\n    \"incident\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Memory",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/memory",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "memory"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Memory",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/memory",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "memory"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:19:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_gb\": 7.87,\n    \"used_gb\": 6.52,\n    \"free_gb\": 1.35,\n    \"used_percent\": 82.84,\n    \"checked_at\": \"Thu, 26 Mar 2026 12:19:41 +0100\",\n    \"alert_triggered\": true,\n    \"incident\": {\n        \"id\": \"019d29df-1eb3-7297-87e6-34fd1af7b5b8\",\n        \"severity\": \"HIGH\",\n        \"message\": \"Incident created\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Disk",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/disk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "disk"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Disk",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/disk",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "disk"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:19:53 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_gb\": 237.91,\n    \"used_gb\": 214.44,\n    \"free_gb\": 23.48,\n    \"used_percent\": 90.13,\n    \"checked_at\": \"Thu, 26 Mar 2026 12:19:53 +0100\",\n    \"alert_triggered\": true,\n    \"incident\": {\n        \"id\": \"019d29df-4cbc-70c1-b1de-b071911589a0\",\n        \"severity\": \"CRITICAL\",\n        \"message\": \"Incident created\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "all"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "All",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "all"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:19:58 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"host_info\": {\n        \"status\": \"UP\",\n        \"hostname\": \"DESKTOP-EPN0LQQ\",\n        \"os\": \"Windows\",\n        \"platform\": \"Microsoft Windows 10 build 19045\",\n        \"checked_at\": \"Thu, 26 Mar 2026 12:19:56 +0100\"\n    },\n    \"cpu_info\": {\n        \"total_usage_percent\": 20.34,\n        \"logical_cores\": 4,\n        \"physical_cores\": 2,\n        \"checked_at\": \"Thu, 26 Mar 2026 12:19:57 +0100\",\n        \"alert_triggered\": false,\n        \"incident\": null\n    },\n    \"memory_info\": {\n        \"total_gb\": 7.87,\n        \"used_gb\": 6.56,\n        \"free_gb\": 1.31,\n        \"used_percent\": 83.33,\n        \"checked_at\": \"Thu, 26 Mar 2026 12:19:57 +0100\",\n        \"alert_triggered\": true,\n        \"incident\": {\n            \"id\": \"019d29df-5eb6-710a-80ec-f74fef716ebb\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Incident created\"\n        }\n    },\n    \"disk_info\": {\n        \"total_gb\": 237.91,\n        \"used_gb\": 214.44,\n        \"free_gb\": 23.47,\n        \"used_percent\": 90.13,\n        \"checked_at\": \"Thu, 26 Mar 2026 12:19:57 +0100\",\n        \"alert_triggered\": true,\n        \"incident\": {\n            \"id\": \"019d29df-5f17-710c-a4f1-f16ab34ad613\",\n            \"severity\": \"CRITICAL\",\n            \"message\": \"Incident created\"\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Error",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v2/cpu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v2",
+            "cpu"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v2/cpu",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v2",
+                "cpu"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:20:01 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"timestamp\": \"2026-03-26T11:20:01.472+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"trace\": \"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v2/cpu.\\r\\n\\tat org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)\\r\\n\\tat org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:1583)\\r\\n\",\n    \"message\": \"No static resource api/v2/cpu.\",\n    \"path\": \"/api/v2/cpu\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "CPU Error",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/cpuError",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "cpuError"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "CPU Error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/cpuError",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "cpuError"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 26 Mar 2026 11:20:05 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Unable to read CPU metrics\",\n    \"status\": 500,\n    \"checked_at\": \"Thu, 26 Mar 2026 12:20:05 +0100\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "incidents",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "incidents",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://monitoring-app.on-forge.com/api/v1/incidents",
+              "protocol": "https",
+              "host": [
+                "monitoring-app",
+                "on-forge",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "incidents"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Thu, 26 Mar 2026 11:29:54 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding, Origin"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "content-encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "9e25d1f86ebc8c76-CDG"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Incidents retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"019d29e8-737d-73bb-9d90-ee0cf6d05817\",\n            \"title\": \"ALERTE DISQUE — Utilisation à 75.2%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation disque anormale de 75.2% à Thu, 26 Mar 2026 12:29:51 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"HIGH\",\n            \"started_at\": \"2026-03-26T11:29:53.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:53.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:53.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#ffc107\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-6ed4-70e0-9d23-a200edf1f0d6\",\n            \"title\": \"ALERTE RAM — Utilisation à 45.8%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation RAM anormale de 45.8% à Thu, 26 Mar 2026 12:29:50 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:51.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:51.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:51.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-663b-735b-8559-a73378c39da8\",\n            \"title\": \"ALERTE DISQUE — Utilisation à 75.2%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation disque anormale de 75.2% à Thu, 26 Mar 2026 12:29:47 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"HIGH\",\n            \"started_at\": \"2026-03-26T11:29:49.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:49.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:49.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#ffc107\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-630c-70f5-b24a-83a81c1b94b9\",\n            \"title\": \"ALERTE DISK — Utilisation à 42.3%\",\n            \"description\": \"Le serveur monitoring-server a détecté une utilisation DISK anormale de 42.3% à Thu, 26 Mar 2026 11:29:48 CET.\",\n            \"application_id\": \"019d2555-856f-7308-bb07-250255a01a0a\",\n            \"user_id\": 65,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"application\": {\n                \"id\": \"019d2555-856f-7308-bb07-250255a01a0a\",\n                \"name\": \"Sonde Monitoring - Ewan Berthomieu\",\n                \"url\": \"http://192.168.15.62:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://192.168.15.62:8000\",\n                \"user_id\": 65,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T14:10:54.000000Z\",\n                \"updated_at\": \"2026-03-25T14:10:54.000000Z\"\n            },\n            \"user\": {\n                \"id\": 65,\n                \"name\": \"Ewan Berthomieu\",\n                \"email\": \"berthomieu.ewan@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T14:08:10.000000Z\",\n                \"updated_at\": \"2026-03-25T14:08:10.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-627d-71df-87ab-f7d2c99d203c\",\n            \"title\": \"ALERTE DISK — Utilisation à 90.1366119920679%\",\n            \"description\": \"Serveur DESKTOP-EPN0LQQ utilisation DISK = 90.1366119920679%\",\n            \"application_id\": \"019d2974-9fd9-7238-9e44-bcf7326d7f8e\",\n            \"user_id\": 85,\n            \"status\": \"OPEN\",\n            \"severity\": \"CRITICAL\",\n            \"started_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"application\": {\n                \"id\": \"019d2974-9fd9-7238-9e44-bcf7326d7f8e\",\n                \"name\": \"Sonde Monitoring - Yousra\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 85,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-26T09:23:22.000000Z\",\n                \"updated_at\": \"2026-03-26T09:23:22.000000Z\"\n            },\n            \"user\": {\n                \"id\": 85,\n                \"name\": \"Yousra\",\n                \"email\": \"yousrakarimi2002@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-26T00:14:19.000000Z\",\n                \"updated_at\": \"2026-03-26T00:14:19.000000Z\",\n                \"notification_email\": null,\n                \"slack_webhook_url\": null,\n                \"teams_webhook_url\": null,\n                \"discord_webhook_url\": null\n            },\n            \"severity_color\": \"#dc3545\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-620a-70c7-b81a-0500b8e7630f\",\n            \"title\": \"ALERTE MEMORY — Utilisation à 84.06832555562504%\",\n            \"description\": \"Serveur DESKTOP-EPN0LQQ utilisation MEMORY = 84.06832555562504%\",\n            \"application_id\": \"019d2974-9fd9-7238-9e44-bcf7326d7f8e\",\n            \"user_id\": 85,\n            \"status\": \"OPEN\",\n            \"severity\": \"HIGH\",\n            \"started_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:48.000000Z\",\n            \"application\": {\n                \"id\": \"019d2974-9fd9-7238-9e44-bcf7326d7f8e\",\n                \"name\": \"Sonde Monitoring - Yousra\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 85,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-26T09:23:22.000000Z\",\n                \"updated_at\": \"2026-03-26T09:23:22.000000Z\"\n            },\n            \"user\": {\n                \"id\": 85,\n                \"name\": \"Yousra\",\n                \"email\": \"yousrakarimi2002@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-26T00:14:19.000000Z\",\n                \"updated_at\": \"2026-03-26T00:14:19.000000Z\",\n                \"notification_email\": null,\n                \"slack_webhook_url\": null,\n                \"teams_webhook_url\": null,\n                \"discord_webhook_url\": null\n            },\n            \"severity_color\": \"#ffc107\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-5f8c-70ad-9303-83017c4a1ff7\",\n            \"title\": \"ALERTE RAM — Utilisation à 45.7%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation RAM anormale de 45.7% à Thu, 26 Mar 2026 12:29:46 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:47.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:47.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:47.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-5837-704d-981b-6302c214b7dd\",\n            \"title\": \"ALERTE CPU — Utilisation à 36.1%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation CPU anormale de 36.1% à Thu, 26 Mar 2026 12:29:44 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:46.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:46.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:46.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-552b-73a2-bb3c-1b00d5e9bcee\",\n            \"title\": \"ALERTE DISQUE — Utilisation à 75.2%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation disque anormale de 75.2% à Thu, 26 Mar 2026 12:29:43 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"HIGH\",\n            \"started_at\": \"2026-03-26T11:29:45.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:45.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:45.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#ffc107\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-4e2f-729d-b643-d34b7ccd40b4\",\n            \"title\": \"ALERTE RAM — Utilisation à 45.9%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation RAM anormale de 45.9% à Thu, 26 Mar 2026 12:29:41 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:43.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:43.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:43.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-4902-7089-b5ed-2e4084a19a02\",\n            \"title\": \"ALERTE DISQUE — Utilisation à 75.2%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation disque anormale de 75.2% à Thu, 26 Mar 2026 12:29:40 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"HIGH\",\n            \"started_at\": \"2026-03-26T11:29:42.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:42.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:42.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#ffc107\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-430c-72fb-85e2-28220ab8fef3\",\n            \"title\": \"ALERTE RAM — Utilisation à 45.8%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation RAM anormale de 45.8% à Thu, 26 Mar 2026 12:29:39 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:40.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:40.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:40.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-37ab-7266-9828-5741669ac501\",\n            \"title\": \"ALERTE DISK — Utilisation à 42.3%\",\n            \"description\": \"Le serveur monitoring-server a détecté une utilisation DISK anormale de 42.3% à Thu, 26 Mar 2026 11:29:37 CET.\",\n            \"application_id\": \"019d2555-856f-7308-bb07-250255a01a0a\",\n            \"user_id\": 65,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:37.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:37.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:37.000000Z\",\n            \"application\": {\n                \"id\": \"019d2555-856f-7308-bb07-250255a01a0a\",\n                \"name\": \"Sonde Monitoring - Ewan Berthomieu\",\n                \"url\": \"http://192.168.15.62:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://192.168.15.62:8000\",\n                \"user_id\": 65,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T14:10:54.000000Z\",\n                \"updated_at\": \"2026-03-25T14:10:54.000000Z\"\n            },\n            \"user\": {\n                \"id\": 65,\n                \"name\": \"Ewan Berthomieu\",\n                \"email\": \"berthomieu.ewan@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T14:08:10.000000Z\",\n                \"updated_at\": \"2026-03-25T14:08:10.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-34e8-7159-9ece-a06095a5a054\",\n            \"title\": \"ALERTE DISQUE — Utilisation à 75.2%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation disque anormale de 75.2% à Thu, 26 Mar 2026 12:29:36 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"HIGH\",\n            \"started_at\": \"2026-03-26T11:29:36.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:37.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:37.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#ffc107\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        },\n        {\n            \"id\": \"019d29e8-30e9-719b-92cf-6b99749b29e5\",\n            \"title\": \"ALERTE RAM — Utilisation à 45.7%\",\n            \"description\": \"Le serveur MDH a détecté une utilisation RAM anormale de 45.7% à Thu, 26 Mar 2026 12:29:34 CET.\",\n            \"application_id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n            \"user_id\": 59,\n            \"status\": \"OPEN\",\n            \"severity\": \"LOW\",\n            \"started_at\": \"2026-03-26T11:29:35.000000Z\",\n            \"ended_at\": null,\n            \"duration\": null,\n            \"is_active\": true,\n            \"is_closed\": false,\n            \"created_at\": \"2026-03-26T11:29:35.000000Z\",\n            \"updated_at\": \"2026-03-26T11:29:35.000000Z\",\n            \"application\": {\n                \"id\": \"019d2480-7189-71cb-9261-9c3872208f66\",\n                \"name\": \"Sonde Monitoring - Moadh\",\n                \"url\": \"http://localhost:8000\",\n                \"url_to_watch\": null,\n                \"expected_http_code\": 200,\n                \"monitor_url\": \"http://localhost:8000\",\n                \"user_id\": 59,\n                \"application_group_id\": null,\n                \"created_at\": \"2026-03-25T10:18:10.000000Z\",\n                \"updated_at\": \"2026-03-25T10:18:10.000000Z\"\n            },\n            \"user\": {\n                \"id\": 59,\n                \"name\": \"Moadh\",\n                \"email\": \"moadh@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2026-03-25T10:13:47.000000Z\",\n                \"updated_at\": \"2026-03-25T10:13:47.000000Z\"\n            },\n            \"severity_color\": \"#28a745\",\n            \"status_transitions\": [\n                \"IN_PROGRESS\",\n                \"CLOSED\"\n            ]\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 528,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=2\",\n                \"label\": \"2\",\n                \"page\": 2,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=3\",\n                \"label\": \"3\",\n                \"page\": 3,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=4\",\n                \"label\": \"4\",\n                \"page\": 4,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=5\",\n                \"label\": \"5\",\n                \"page\": 5,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=6\",\n                \"label\": \"6\",\n                \"page\": 6,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=7\",\n                \"label\": \"7\",\n                \"page\": 7,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=8\",\n                \"label\": \"8\",\n                \"page\": 8,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=9\",\n                \"label\": \"9\",\n                \"page\": 9,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=10\",\n                \"label\": \"10\",\n                \"page\": 10,\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=527\",\n                \"label\": \"527\",\n                \"page\": 527,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=528\",\n                \"label\": \"528\",\n                \"page\": 528,\n                \"active\": false\n            },\n            {\n                \"url\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"page\": 2,\n                \"active\": false\n            }\n        ],\n        \"path\": \"https://monitoring-app.on-forge.com/api/v1/incidents\",\n        \"per_page\": 15,\n        \"to\": 15,\n        \"total\": 7917,\n        \"first\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=1\",\n        \"last\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=528\",\n        \"prev\": null,\n        \"next\": \"https://monitoring-app.on-forge.com/api/v1/incidents?page=2\"\n    }\n}"
+        }
+      ]
+    }
+  ]
+}

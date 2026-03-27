@@ -1,6 +1,6 @@
 package org.api.services;
 
-import org.api.DTO.IncidentInfo;
+import org.api.DTOMetier.IncidentInfo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -41,6 +41,8 @@ public class AlertService {
         System.out.println("BODY SENT: " + body);
 
         HttpHeaders headers = new HttpHeaders();
+
+
         headers.setBearerAuth(token);
         headers.setContentType(MediaType.APPLICATION_JSON);
 

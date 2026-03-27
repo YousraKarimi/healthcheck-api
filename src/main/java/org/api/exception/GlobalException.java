@@ -1,6 +1,6 @@
 package org.api.exception;
 
-import org.api.DTO.ErrorResponse;
+import org.api.DTOMetier.ErrorResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

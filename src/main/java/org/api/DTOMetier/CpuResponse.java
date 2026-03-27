@@ -1,4 +1,4 @@
-package org.api.DTO;
+package org.api.DTOMetier;
 
 public class CpuResponse {
     private double total_usage_percent;

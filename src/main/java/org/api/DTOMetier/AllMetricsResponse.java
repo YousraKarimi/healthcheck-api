@@ -1,4 +1,4 @@
-package org.api.DTO;
+package org.api.DTOMetier;
 
 public class AllMetricsResponse {
     private HealthResponse host_info;
